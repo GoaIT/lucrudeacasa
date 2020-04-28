@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'forms_html/base.html' %}
+{% load static %}
+
+{% block forms_app %}
+    <div class="container">
+        <h5>Suntem pe o pagina cu o forma simpla</h5>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <form method='POST'>
+                {% csrf_token %}
+                {{ check_form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Trimite">
+            </form>
+            
+        </div>
+    </div>
+
+{% endblock %}

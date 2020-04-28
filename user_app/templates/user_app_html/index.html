@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'user_app_html/base.html' %}
+
+{% block content %}
+    
+    <div class="container">
+        <div class="jumbotron">
+            <h5>Suntem pe pagina index.html din aplicatia user_app!</h5>
+            {% if user.is_authenticated %}
+              <h2>Welcome {{ user.username }}!</h2>
+            {% else %}
+              <h2>Welcome to the site!</h2>
+            {% endif %}
+        </div>
+    </div>
+    
+{% endblock %}

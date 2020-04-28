@@ -1,0 +1,18 @@
+{% extends "cbv_app_html/base.html" %}
+
+{% block content %}
+<h1>
+  {% if not form.instance.pk %}
+  <!-- daca nu exista instanta pentru pk cerut apare Create School, altfel Update School -->
+    Create School
+  {% else %}
+    Update School
+  {% endif %}
+</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class='btn btn-primary' value="Submit">
+    </form>
+
+{% endblock %}

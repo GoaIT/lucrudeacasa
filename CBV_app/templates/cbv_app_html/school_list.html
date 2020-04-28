@@ -1,0 +1,18 @@
+{% extends "cbv_app_html/base.html" %}
+
+{% block content %}
+
+  <div class="jumbotron">
+
+    <h1>Welcome to the List of Schools Page!</h1>
+      <ol>
+        {% for school in schools %}
+        <!-- school.id = PK tabela School -->
+          <h2><li><a href="{{school.id}}/">{{school.name}}</a></li></h2>
+        {% endfor %}
+      </ol>
+
+  </div>
+
+
+{% endblock %}
